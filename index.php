@@ -57,7 +57,7 @@ require_once './db/db.php';
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>SAYRAM LOGISTIC</span></a>
+				<a class="brand" href="index.html"><small>sayram logistic</small></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
