@@ -15,7 +15,7 @@ function test_input($data) {
     return $data5;
 }
 
-require_once './db/db.php';
+//require_once './db/db.php';
 $errors = array();
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email'], $_POST['_csrf'], $_POST['pass'])) {
     $_POST['email'] = test_input($_POST['email']);
