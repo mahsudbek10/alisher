@@ -18,8 +18,7 @@
   
     if ( !R::testConnection() )
     {
-        R::setup( 'mysql:host=localhost;dbname=azamat','root', '' );
-        if ( !R::testConnection() ) exit ('connection error');
+            exit ('connection error');
     }
  
         
