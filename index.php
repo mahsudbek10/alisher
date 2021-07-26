@@ -144,7 +144,39 @@ foreach ($cities as $item):
     </div>
     <div class="modal-body">
         <p>Here settings can be configured...</p>
+        <div  id = "map1" style = "height: 100vh; width: 100%"></div>
+            <script>
+                // Creating map options
+                var mapOptions1 = {
+//                        center: [42.31298, 69.72328],
+                    center: [48.038, 70.789],
+                    zoom: 5
+                };
 
+                // Creating a map object
+                var map1 = new L.map('map1', mapOptions1);
+
+                // Creating a Layer object
+                var layer1 = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+                // Adding layer to the map
+                map1.addLayer(layer1);
+
+                var marker1;
+<?php
+$cities = R::getAll("SELECT * FROM azamat_city");
+
+foreach ($cities as $item):
+    $vacancy_count = R::getAll("SELECT id FROM azamat_vacancy WHERE id_city=?", [$item['id']]);
+    $rezume_count = R::getAll("SELECT id FROM azamat_rezume WHERE id_city=?", [$item['id']]);
+    ?>
+                    marker1 = L.marker([<?= $item['x'] ?>, <?= $item['y'] ?>]);
+                    marker1.bindPopup('<b><?= $item['name'] ?></b><br><img src="<?= $item['img'] ?>" width="100px">').openPopup();
+                    marker1.addTo(map1); // Adding marker to the map
+
+
+<?php endforeach; ?>
+            </script>
     </div>
     <div class="modal-footer">
         <a href="#" class="btn" data-dismiss="modal">Close</a>
@@ -154,7 +186,7 @@ foreach ($cities as $item):
 
 <div class="common-modal modal fade" id="common-Modal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
-
+        
         <ul class="list-inline item-details">
             <li><a href="http://themifycloud.com">Admin templates</a></li>
             <li><a href="http://themescloud.org">Bootstrap themes</a></li>
