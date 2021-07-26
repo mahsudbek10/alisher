@@ -15,7 +15,7 @@ function test_input($data) {
     return $data5;
 }
 
-//require_once 'db/db.php';
+require_once './db/db.php';
 ?>
 <!DOCTYPE html>
 <html lang="ru">

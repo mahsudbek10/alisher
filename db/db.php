@@ -2,8 +2,8 @@
     require 'rb-mysql.php';
     
 //    R::setup( 'mysql:host=localhost;dbname=p-318571_','root', '' );
-
-        R::setup( 'mysql:host=localhost;dbname=azamat','root', '' );
+    R::setup( 'mysql:host=localhost;dbname=p-318571_','p-318571', 'z6tYmKBjPKo9!' );
+        
     
     
     
@@ -18,7 +18,7 @@
   
     if ( !R::testConnection() )
     {
-        R::setup( 'mysql:host=localhost;dbname=p-318571_','p-318571', 'z6tYmKBjPKo9!' );
+        R::setup( 'mysql:host=localhost;dbname=azamat','root', '' );
         if ( !R::testConnection() ) exit ('connection error');
     }
  
