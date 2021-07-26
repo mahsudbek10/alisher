@@ -410,7 +410,7 @@ require_once './db/db.php';
 
                             <li><a href="users"><i class="icon-user"></i><span class="hidden-tablet"> Users</span></a></li>
                             <li><a href="data"><i class="icon-book"></i><span class="hidden-tablet"> Data library</span></a></li>
-                            <li><a href="settings"><i class="icon-circle"></i><span class="hidden-tablet"> Settings</span></a></li>
+                            <li><a href="settings"><i class="halflings-icon white wrench"></i><span class="hidden-tablet"> Settings</span></a></li>
 
                         </ul>
                         <div style="text-align: center;"><a href="index" class="btn btn-small btn-success">Live Support</a></div>
