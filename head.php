@@ -1,5 +1,4 @@
 <?php
-
 if (session_status() != PHP_SESSION_ACTIVE)
     session_start();
 if (isset($_SESSION['user_email']))
@@ -15,6 +14,7 @@ function test_input($data) {
     $data5 = htmlentities($data4);
     return $data5;
 }
+
 require_once 'db/db.php';
 ?>
 <!DOCTYPE html>
@@ -334,18 +334,14 @@ require_once 'db/db.php';
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown-menu-title">
-                                        <span>Account Settings/Настройки</span>
-                                    </li>
                                     <li><a href="#"><i class="halflings-icon user"></i> Profile/Профиль</a></li>
-                                    <li><a href="login.html"><i class="halflings-icon off"></i> Logout/Выйти</a></li>
+                                    <li><a href="login.php"><i class="halflings-icon off"></i> Logout/Выйти</a></li>
                                 </ul>
                             </li>
                             <!-- end: User Dropdown -->
                         </ul>
                     </div>
                     <!-- end: Header Menu -->
-
                 </div>
             </div>
         </div>
@@ -358,30 +354,66 @@ require_once 'db/db.php';
                 <div id="sidebar-left" class="span2">
                     <div class="nav-collapse sidebar-nav">
                         <ul class="nav nav-tabs nav-stacked main-menu">                            
-                            <li><a href="index"><i class="icon-calendar"></i><span class="hidden-tablet"> Dispath board/Диспетчерская</span></a></li>	
+                            <li><a href="board"><i class="icon-calendar"></i><span class="hidden-tablet"> Dispath board/Диспетчерская</span></a></li>	
                             <li><a href="index"><i class="icon-download-alt"></i><span class="hidden-tablet"> Loads/Грузы</span></a></li>
-                            <li><a href="index"><i class="icon-user"></i><span class="hidden-tablet"> Drivers/Драйверы</span></a></li>
-                            <li><a href="index"><i class="icon-group"></i><span class="hidden-tablet"> Partners/Партнеры</span></a></li>
-                            <li><a href="index"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
-                            <li><a href="index"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li>
+                            <li><a href="drivers"><i class="icon-user"></i><span class="hidden-tablet"> Drivers/Драйверы</span></a></li>
+                            <li><a href="partners"><i class="icon-group"></i><span class="hidden-tablet"> Partners/Партнеры</span></a></li>
                             <li>
-                                <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Dropdown</span><span class="label label-important"> 3 </span></a>
+                                <a class="dropmenu" href="#"><i class="icon-columns"></i><span class="hidden-tablet"> Equpment</span><span class="label label-important"> 3 </span></a>
                                 <ul>
-                                    <li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
-                                    <li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 2</span></a></li>
-                                    <li><a class="submenu" href="submenu3.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>
+                                    <li><a class="submenu" href="trucks"><i class="icon-file-alt"></i><span class="hidden-tablet"> Trucks</span></a></li>
+                                    <li><a class="submenu" href="trailers"><i class="icon-file-alt"></i><span class="hidden-tablet"> Trailers</span></a></li>
                                 </ul>	
                             </li>
-                            <li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
-                            <li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
-                            <li><a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>
-                            <li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>
-                            <li><a href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>
-                            <li><a href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
-                            <li><a href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>
-                            <li><a href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>
-                            <li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
+                            <li>
+                                <a class="dropmenu" href="#"><i class="icon-filter"></i><span class="hidden-tablet"> Fuel</span></a>
+                                <ul>
+                                    <li><a class="submenu" href="f1"><i class="icon-file-alt"></i><span class="hidden-tablet"> Fuel cards</span></a></li>
+                                    <li><a class="submenu" href="f2"><i class="icon-file-alt"></i><span class="hidden-tablet"> Fuel transactions</span></a></li>
+                                    <li><a class="submenu" href="f3"><i class="icon-file-alt"></i><span class="hidden-tablet"> Fuel import</span></a></li>
+                                </ul>	
+                            </li>
+                            <li><a href="driverpay"><i class="icon-money"></i><span class="hidden-tablet"> Driver payroll/</span></a></li>
+
+                            <li>
+                                <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Accounting</span></a>
+                                <ul>
+                                    <li><a class="submenu" href="a1"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
+                                    <li><a class="submenu" href="a2"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 2</span></a></li>
+                                    <li><a class="submenu" href="a3"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>
+                                </ul>	
+                            </li>
+                            <li>
+                                <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Reports</span></a>
+                                <ul>
+                                    <li><a class="submenu" href="r1"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
+                                    <li><a class="submenu" href="r2"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 2</span></a></li>
+                                    <li><a class="submenu" href="r3"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>
+                                </ul>	
+                            </li>
+                            <li>
+                                <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Safety</span></a>
+                                <ul>
+                                    <li><a class="submenu" href="s1"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
+                                    <li><a class="submenu" href="s2"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 2</span></a></li>
+                                    <li><a class="submenu" href="s3"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>
+                                </ul>	
+                            </li>
+                            <li>
+                                <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> IFTA</span></a>
+                                <ul>
+                                    <li><a class="submenu" href="i1"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
+                                    <li><a class="submenu" href="i2"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 2</span></a></li>
+                                    <li><a class="submenu" href="i3"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>
+                                </ul>	
+                            </li>
+
+                            <li><a href="users"><i class="icon-user"></i><span class="hidden-tablet"> Users</span></a></li>
+                            <li><a href="data"><i class="icon-book"></i><span class="hidden-tablet"> Data library</span></a></li>
+                            <li><a href="settings"><i class="icon-circle"></i><span class="hidden-tablet"> Settings</span></a></li>
+
                         </ul>
+                        <div style="text-align: center;"><a href="index" class="btn btn-small btn-success">Live Support</a></div>
                     </div>
                 </div>
                 <!-- end: Main Menu -->
