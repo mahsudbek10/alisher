@@ -1,7 +1,7 @@
 <?php
     require 'rb-mysql.php';
     
-    //    R::setup( 'mysql:host=localhost;dbname=p-318571_','root', '' );
+//       R::setup( 'mysql:host=localhost;dbname=p-318571_','root', '' );
     R::setup( 'mysql:host=localhost;dbname=p-313963_epolice','p-313963_epolice', 'Mahsudbey101419741' );
 
 

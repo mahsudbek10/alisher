@@ -359,7 +359,7 @@ require_once './db/db.php';
                             <li><a href="drivers"><i class="icon-user"></i><span class="hidden-tablet"> Drivers/Драйверы</span></a></li>
                             <li><a href="partners"><i class="icon-group"></i><span class="hidden-tablet"> Partners/Партнеры</span></a></li>
                             <li>
-                                <a class="dropmenu" href="#"><i class="icon-columns"></i><span class="hidden-tablet"> Equpment</span><span class="label label-important"> 3 </span></a>
+                                <a class="dropmenu" href="#"><i class="icon-columns"></i><span class="hidden-tablet"> Equipment</span><!--<span class="label label-important"> 3 </span>--></a>
                                 <ul>
                                     <li><a class="submenu" href="trucks"><i class="icon-file-alt"></i><span class="hidden-tablet"> Trucks</span></a></li>
                                     <li><a class="submenu" href="trailers"><i class="icon-file-alt"></i><span class="hidden-tablet"> Trailers</span></a></li>
