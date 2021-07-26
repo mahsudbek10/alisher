@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email'], $_POST['_csr
         if ($user) {
             if ($user->is_blocked == 0) {
                 if (password_verify($_POST['pass'], $user->pass)) {
-                    //если пароль совпадает, то нужно авторизовать пользователя
+                    //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                     $school = R::findOne('school', 'id = ?', array($user->school));
                     $_SESSION['user_id'] = $user->id;
                     $_SESSION['user_fio'] = $user->fio;
@@ -39,12 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email'], $_POST['_csr
                     $user = NULL;
                     header("Location: index");
                 } else {
-                    $errors[] = 'Неверный логин или пароль!';
+                    $errors[] = 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!';
                 }
             } else
-                $errors[] = 'Ваш аккаунт заблокирован';
-        }$errors[] = 'Неверный логин или пароль!';
-    }$errors[] = 'Неверный логин или пароль!';
+                $errors[] = 'пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ';
+        }$errors[] = 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!';
+    }$errors[] = 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!';
 }
 //    header("Location: login.php");
 $_POST = NULL;
@@ -107,32 +107,35 @@ $user = NULL;
                             <a href="#"><i class="halflings-icon cog"></i></a>
                         </div>
                         <h2 class="text-align-center"><?= $title; ?></h2>
-                        <form class="form-horizontal" action="index.html" method="post">
+                        <form class="form-horizontal" action="index" method="post">
                             <fieldset>
 
                                 <div class="input-prepend" title="Username">
                                     <span class="add-on"><i class="halflings-icon user"></i></span>
-                                    <input class="input-large span10" name="username" id="username" type="text" placeholder="type login/логин"/>
+                                    <input class="input-large span10" name="username" id="username" type="text" placeholder="type login/Р»РѕРіРёРЅ"/>
                                 </div>
                                 <div class="clearfix"></div>
 
                                 <div class="input-prepend" title="Password">
                                     <span class="add-on"><i class="halflings-icon lock"></i></span>
-                                    <input class="input-large span10" name="password" id="password" type="password" placeholder="type password/пароль"/>
+                                    <input class="input-large span10" name="password" id="password" type="password" placeholder="type password/РїР°СЂРѕР»СЊ"/>
                                 </div>
                                 <div class="clearfix"></div>
 
-                                <label class="remember" for="remember"><input type="checkbox" id="remember" />Запомнить/Remember me</label>
+                                <label class="remember" for="remember"><input type="checkbox" id="remember" />Remember me/Р—Р°РїРѕРјРЅРёС‚СЊ</label>
 
                                 <div class="button-login">	
-                                    <button type="submit" class="btn btn-primary">Login</button>
+                                    <button type="submit" class="btn btn-primary">Login/Р’РѕР№С‚Рё</button>
                                 </div>
                                 <div class="clearfix"></div>
                         </form>
                         <hr>
-                        <h3>Forgot Password?</h3>
+                        <h3>Forgot Password?/Р—Р°Р±С‹Р» РїР°СЂРѕР»СЊ?</h3>
                         <p>
                             No problem, <a href="#">click here</a> to get a new password.
+                        </p>	
+                        <p>
+                            РќРµ РїСЂРѕР±Р»РµРјР°, <a href="#">РїРµСЂРµС…РѕРґРё РїРѕ СЃСЃС‹Р»РєРµ</a> РґР»СЏ РёР·РјРµРЅРµРЅРёСЏ РїР°СЂРѕР»СЏ.
                         </p>	
                     </div><!--/span-->
                 </div><!--/row-->
