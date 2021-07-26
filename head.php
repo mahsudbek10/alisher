@@ -1,8 +1,8 @@
 <?php
 if (session_status() != PHP_SESSION_ACTIVE)
     session_start();
-if (isset($_SESSION['user_email']))
-    header("Location: index");
+//if (isset($_SESSION['user_email']))
+  //  header("Location: index");
 $title = "Sayram "
         . "Logistic";
 
