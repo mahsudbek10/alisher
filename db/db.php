@@ -12,8 +12,7 @@
 //        echo $value['users_name'].'<br>';
 //    } 
   
-    if ( !R::testConnection() )
-    {
+    if ( !R::testConnection() ){
         exit ('Нет соединения с базой данных');
     }
 
